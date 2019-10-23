@@ -73,30 +73,34 @@ function partRomeNumber( rome ){
 }
 
 function allowSubtracted( simbol , next ){
-    if(simbol == "I" || simbol == "X" || simbol == "C"){
-        if(romanValues(simbol) < romanValues(next)){
-            switch (simbol) {
-                case "I": 
-                    if(next === "V" || next === "X" || next == "I")
-                        return true 
-                    throw "'I' can subtracted only 'V' and 'X' ";              
-                    
-                case "X":
-                    if(next === "L" || next === "C" || next == "X")
-                        return true; 
-                    throw "'X' can subtracted only 'L' and 'C' ";              
-                    
-                case "C":
-                    if(next === "D" || next === "M" || next == "C")
-                        return true; 
-                    throw "'C' can subtracted only 'D' and 'M' ";              
-            }
-    }
-        return true;
-    }else{
-        if(romanValues(simbol) < romanValues(next))
-            throw `${simbol} can never be subtracted`
-        return false;
+    try{
+        if(simbol == "I" || simbol == "X" || simbol == "C"){
+            if(romanValues(simbol) < romanValues(next)){
+                switch (simbol) {
+                    case "I": 
+                        if(next === "V" || next === "X" || next == "I")
+                            return true 
+                        throw "'I' can subtracted only 'V' and 'X' ";              
+                        
+                    case "X":
+                        if(next === "L" || next === "C" || next == "X")
+                            return true; 
+                        throw "'X' can subtracted only 'L' and 'C' ";              
+                        
+                    case "C":
+                        if(next === "D" || next === "M" || next == "C")
+                            return true; 
+                        throw "'C' can subtracted only 'D' and 'M' ";              
+                }
+        }
+            return true;
+        }else{
+            if(romanValues(simbol) < romanValues(next))
+                throw `${simbol} can never be subtracted`
+            return false;
+        }
+    }catch(e){
+        console.log(e)
     }
 }
 

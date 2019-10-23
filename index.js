@@ -21,7 +21,6 @@ const inputs = [
     "how much is pish tegj glob glob ?",
     "how many Credits is glob prok Silver ?",
     "how many Credits is glob prok Gold ?",
-    "how many Credits is pish prok Gold ?", //meu teste
     "how many Credits is glob prok Iron ?",
     "how much wood could a woodchuck chuck if a woodchuck could chuck wood ?"   
 ];
